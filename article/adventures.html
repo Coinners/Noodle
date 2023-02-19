@@ -2,17 +2,24 @@
 <html>
     <head>
         <title>Noodle - Adventures</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-        <link rel="stylesheet" href="article.css">
+        <link rel="stylesheet" href="../article.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            window.onload = function () {
+                document.getElementById("copyright").firstChild.innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung`;
+            };
+        </script>
     </head>
     
     <body>
         <div class="article">
             <div class="head">
-                <p>&larr;Back to home</p>
-                <h2>Unforgettable Adventures: Tips for Planning Your Next Journey</h2>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <a style="position: absolute; left: 10.5%;" href="../index.html">Back to home</a>
+                    <h2>Unforgettable Adventures: Tips for Planning Your Next Journey</h2>
+                </div>
                 <p>There's nothing quite like the excitement and anticipation that comes with planning a new adventure. Whether you're
                     dreaming of scaling a mountain peak, exploring a foreign city, or simply taking a road trip to somewhere new,
                     there's a certain thrill in the unknown that makes planning a trip feel like an adventure in itself.
@@ -56,7 +63,7 @@
             difference in creating an unforgettable journey. So go ahead - start dreaming, start planning, and get ready for the
             adventure of a lifetime!</p>
         </div>
-        <div class="copyright">
+        <div class="copyright" id="copyright">
             <p>&copy;2023 Niclas Jung</p>
         </div>
     </body>

@@ -10,11 +10,12 @@ body {
     font-size: 14px;
 }
 
-.head {
-    text-align: center;
-}
-
 .article {
     width: 80%;
     margin: 0 auto;
+}
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: blue;
 }
