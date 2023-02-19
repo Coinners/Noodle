@@ -5,21 +5,24 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="autocompletion/autocomplete.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="autocompletion/autocomplete.js"></script>
         <script type="text/javascript">
-            window.onload = function () {
+            window.addEventListener("load", (event) => {
                 document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung | <a href="./about.html">About</a>`;
                 const site = ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management'][Math.floor(Math.random() * 5)]
                 document.getElementById("hint").innerHTML = site;
                 document.getElementById("hint").href = `article/${site.toLowerCase()}.html`;
-            };
+                autocomplete(document.getElementById("input"), ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management']);
+            });
             function formsubmit (event) {
                 event.preventDefault();
-                if (['adventures', 'financial-future', 'productivity', 'sustainability', 'time-management'].includes(document.getElementById('text').value.toLowerCase())) {
-                    window.location.href = `./article/${document.getElementById('text').value.toLowerCase()}.html`;
+                if (['adventures', 'financial-future', 'productivity', 'sustainability', 'time-management'].includes(document.getElementById('input').value.toLowerCase())) {
+                    window.location.href = `./article/${document.getElementById('input').value.toLowerCase()}.html`;
                 }
                 else {
-                    window.location.href = `./404.html?q=${document.getElementById('text').value}`;
+                    window.location.href = `./404.html?q=${document.getElementById('input').value}`;
                 }
             };
         </script>
@@ -36,8 +39,10 @@
                     <span class="green">l</span>
                     <span class="red">e</span>
                 </div>
-                <form onsubmit="formsubmit(event);" id="search">
-                    <input type="text" placeholder="Search..." id="text">
+                <form onsubmit="formsubmit(event);" autocomplete="off">
+                    <div class="autocomplete">
+                        <input type="text" placeholder="Search..." id="input">
+                    </div>
                     <button type="submit">Go</button>
                 </form>
                 <p>Search of the day: <a id="hint" style="font-weight: bold;" href="article/adventures.html">Adventures</a></p>
