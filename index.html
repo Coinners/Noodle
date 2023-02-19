@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Noodle - Search</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            window.onload = function () {
+                document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung`;
+                document.getElementById("hint").innerHTML = ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management'][Math.floor(Math.random() * 5)];
+            };
+            function formsubmit (event) {
+                event.preventDefault();
+                if (['adventures', 'financial-future', 'productivity', 'sustainability', 'time-management'].includes(document.getElementById('text').value.toLowerCase())) {
+                    window.location.href = `./article/${document.getElementById('text').value.toLowerCase()}.html`;
+                }
+                else {
+                    window.location.href = './404.html';
+                }
+            };
+        </script>
+    </head>
+    
+    <body>
+        <div class="center">
+            <div class="search">
+                <div class="noodle-logo">
+                    <span class="blue">N</span>
+                    <span class="red">o</span>
+                    <span class="yellow">o</span>
+                    <span class="blue">d</span>
+                    <span class="green">l</span>
+                    <span class="red">e</span>
+                </div>
+                <form onsubmit="formsubmit(event);">
+                    <input type="text" placeholder="Search..." id="text">
+                    <button type="submit">Go</button>
+                </form>
+                <p>Search of the day: <strong id="hint">Adventures</strong></p>
+            </div>
+        </div>
+        <p class="copyright" id="copyright">&copy;2023 Niclas Jung</p>
+    </body>
+</html>
