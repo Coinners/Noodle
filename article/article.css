@@ -1,0 +1,20 @@
+body {
+    height: 100%;
+    font-family: "Inter", sans-serif;
+    background-color: rgb(248, 248, 248);
+}
+
+.copyright {
+    text-align: center;
+    bottom: 3px;
+    font-size: 14px;
+}
+
+.head {
+    text-align: center;
+}
+
+.article {
+    width: 80%;
+    margin: 0 auto;
+}
