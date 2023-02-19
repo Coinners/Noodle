@@ -49,3 +49,12 @@ th {
     background-color: #f2f2f2;
     font-weight: bold;
 }
+
+.animate {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+img {
+    opacity: 0
+}
