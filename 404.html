@@ -6,6 +6,12 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
         <link rel="stylesheet" href="main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            window.onload = function () {
+                document.getElementById("sorry").innerHTML = `Sorry but we couldn't find <strong>'${decodeURI(window.location.href.match(/(?<=q=).+/gm))}'<strong/>`;
+                document.getElementById("copyright").firstChild.innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung`;
+            };
+        </script>
     </head>
     
     <body>
@@ -13,9 +19,10 @@
             <div class="error">
                 <img src="https://www.google.com/images/errors/robot.png" height="150px">
                 <p style="font-size: 30px; font-weight: bold;">404 - Not Found</p>
-                <p>Sorry but we couldn't find what you're looking for</p>
-                <p>Perhaps you're looking for <a href="./article/adventures.html">Adventures</a>, <a href="./article/financial-future.html">Financial Future</a>, <a href="./article/productivity.html">Productivity</a>, <a href="./article/sustainability.html">Sustainability</a>, <a href="./article/time-management.html">Time Management</a></p>
-                <p>Or back to <a href="./index.html">home</a></p>
+                <p id="sorry">Sorry but we couldn't find what you're looking for</p>
+                <p>Perhaps you're looking for <a href="./article/adventures.html">Adventures</a>, <a href="./article/financial-future.html">Financial Future</a>, <a href="./article/productivity.html">Productivity</a>, <a href="./article/sustainability.html">Sustainability</a>, <a href="./article/time-management.html">Time Management</a>, <a href="about.html">About us</a></p>
+                <p>Or back to <a href="index.html">home</a></p>
+                <p>Find more support <a href="mailto:support@noodle.com">here</a></p>
             </div>
         </div>
         <p class="copyright">&copy;2023 Niclas Jung</p>

@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript">
             window.onload = function () {
-                document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung`;
+                document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung | <a href="./about.html">About</a>`;
                 document.getElementById("hint").innerHTML = ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management'][Math.floor(Math.random() * 5)];
             };
             function formsubmit (event) {
@@ -17,7 +17,7 @@
                     window.location.href = `./article/${document.getElementById('text').value.toLowerCase()}.html`;
                 }
                 else {
-                    window.location.href = './404.html';
+                    window.location.href = `./404.html?q=${document.getElementById('text').value}`;
                 }
             };
         </script>
@@ -41,6 +41,6 @@
                 <p>Search of the day: <strong id="hint">Adventures</strong></p>
             </div>
         </div>
-        <p class="copyright" id="copyright">&copy;2023 Niclas Jung</p>
+        <p class="copyright" id="copyright">&copy;2023 Niclas Jung | <a href="./about.html">About</a></p>
     </body>
 </html>
