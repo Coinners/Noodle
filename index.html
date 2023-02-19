@@ -9,7 +9,9 @@
         <script type="text/javascript">
             window.onload = function () {
                 document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung | <a href="./about.html">About</a>`;
-                document.getElementById("hint").innerHTML = ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management'][Math.floor(Math.random() * 5)];
+                const site = ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management'][Math.floor(Math.random() * 5)]
+                document.getElementById("hint").innerHTML = site;
+                document.getElementById("hint").href = `article/${site.toLowerCase()}.html`;
             };
             function formsubmit (event) {
                 event.preventDefault();
@@ -38,7 +40,7 @@
                     <input type="text" placeholder="Search..." id="text">
                     <button type="submit">Go</button>
                 </form>
-                <p>Search of the day: <strong id="hint">Adventures</strong></p>
+                <p>Search of the day: <a id="hint" style="font-weight: bold;" href="article/adventures.html">Adventures</a></p>
             </div>
         </div>
         <p class="copyright" id="copyright">&copy;2023 Niclas Jung | <a href="./about.html">About</a></p>
