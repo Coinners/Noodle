@@ -9,7 +9,7 @@
         <script type="text/javascript">
             window.onload = function () {
                 document.getElementById("sorry").innerHTML = `Sorry but we couldn't find <strong>'${decodeURI(window.location.href.match(/(?<=q=).+/gm))}'<strong/>`;
-                document.getElementById("copyright").firstChild.innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung`;
+                document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung | <a href="./about.html">About</a>`;
             };
         </script>
     </head>
@@ -25,6 +25,6 @@
                 <p>Find more support <a href="mailto:support@noodle.com">here</a></p>
             </div>
         </div>
-        <p class="copyright">&copy;2023 Niclas Jung</p>
+        <p class="copyright" id="copyright">&copy;2023 Niclas Jung | <a href="./about.html">About</a></p>
     </body>
 </html>
