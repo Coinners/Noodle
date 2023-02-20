@@ -15,14 +15,16 @@
     top: 105%;
     left: 0;
     right: 0;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgb(170, 170, 170);
+    overflow: hidden;
 }
 
 .autocomplete-items div {
     padding: 10px;
     cursor: pointer;
     background-color: #fff;
-    border-bottom: 1px solid #d4d4d4;
-    border-radius: 20px;
+    
 }
 
 .autocomplete-items div:hover {

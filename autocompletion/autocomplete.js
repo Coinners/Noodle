@@ -3,7 +3,26 @@ function autocomplete(inp, arr) {
     inp.addEventListener("input", function (e) {
         var a, b, i, val = this.value;
         closeAllLists();
-        if (!val) { return false; }
+        if (!val) { 
+            closeAllLists();
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+                b = document.createElement("DIV");
+                b.innerHTML = arr[i];
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function (e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                    formsubmit(e);
+                });
+                a.appendChild(b);
+            }
+            return false;
+        }
         currentFocus = -1;
         a = document.createElement("DIV");
         a.setAttribute("id", this.id + "autocomplete-list");
@@ -22,6 +41,25 @@ function autocomplete(inp, arr) {
                 });
                 a.appendChild(b);
             }
+        }
+    });
+    inp.addEventListener("focus", function (e) {
+        closeAllLists();
+        currentFocus = -1;
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+            b = document.createElement("DIV");
+            b.innerHTML = arr[i];
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            b.addEventListener("click", function (e) {
+                inp.value = this.getElementsByTagName("input")[0].value;
+                closeAllLists();
+                formsubmit(e);
+            });
+            a.appendChild(b);
         }
     });
     inp.addEventListener("keydown", function (e) {
