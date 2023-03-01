@@ -9,16 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="autocompletion/autocomplete.js"></script>
         <script type="text/javascript">
+        const sites = ['Future-of-computing', 'Basics-of-Computer-Science', 'AI-and-Ethics', 'Sustainability', 'Time-Management'];
             window.addEventListener("load", (event) => {
                 document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung | <a href="./about.html">About</a>`;
-                const site = ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management'][Math.floor(Math.random() * 5)]
+                const site = sites[Math.floor(Math.random() * 5)]
                 document.getElementById("hint").innerHTML = site;
                 document.getElementById("hint").href = `article/${site.toLowerCase()}.html`;
-                autocomplete(document.getElementById("input"), ['Adventures', 'Financial-Future', 'Productivity', 'Sustainability', 'Time-Management']);
+                autocomplete(document.getElementById("input"), sites);
             });
             function formsubmit (event) {
                 event.preventDefault();
-                if (['adventures', 'financial-future', 'productivity', 'sustainability', 'time-management'].includes(document.getElementById('input').value.toLowerCase())) {
+                if (sites.map(word => word.toLowerCase()).includes(document.getElementById('input').value.toLowerCase())) {
                     window.location.href = `./article/${document.getElementById('input').value.toLowerCase()}.html`;
                 }
                 else {
