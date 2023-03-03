@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript">
             window.onload = function () {
-                document.getElementById("sorry").innerHTML = `Sorry but we couldn't find <strong>'${decodeURI(window.location.href.match(/(?<=q=).+/gm))}'<strong/>`;
+                document.getElementById("sorry").innerHTML = `Sorry but we couldn't find <strong>'${decodeURI(window.location.href.match(/(?<=q=).+/gm))??'that'}'<strong/>`;
                 document.getElementById("copyright").innerHTML = `&copy;${new Date().getFullYear()} Niclas Jung | <a href="./about.html">About</a>`;
             };
         </script>
